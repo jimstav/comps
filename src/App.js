@@ -17,10 +17,12 @@ function App() {
         <Button warning>Click me!</Button>
       </div>
       <div>
-        <Button secondary>Click me!</Button>
+        <Button secondary outline>
+          Click me!
+        </Button>
       </div>
       <div>
-        <Button secondary rounded>
+        <Button primary rounded>
           Click me!
         </Button>
       </div>
