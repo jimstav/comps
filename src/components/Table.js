@@ -3,12 +3,18 @@ function Table({ data, config }) {
     return <th key={column.label}>{column.label}</th>;
   });
 
-  const renderedRows = data.map((fruit) => {
+  const renderedRows = data.map((item) => {
+    const renderedCells = config.map((column) => {
+      return (
+        <td key={column.label} className="p-3">
+          {column.render(item)}
+        </td>
+      );
+    });
+
     return (
-      <tr className="border-b" key={fruit.name}>
-        <td className="p-3">{config[0].render(fruit)}</td>
-        <td className="p-3">{config[1].render(fruit)}</td>
-        <td className="p-3">{config[2].render(fruit)}</td>
+      <tr className="border-b" key={item.name}>
+        {renderedCells}
       </tr>
     );
   });
